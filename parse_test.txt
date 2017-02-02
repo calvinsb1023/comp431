@@ -1,0 +1,80 @@
+MAIL FROM:<hello@googl.com>
+MAIL FRom:<hello@google>
+MAIL FROM: <hello@google>
+MAIL FROM:<HELLO@goo.me.se.se>
+MAIL FROM:<suppp@me.com> 
+:<yoyoyo@google>
+MAIL FROM:< welcome@me>
+MAIL FROM:yooooo@dude>
+MAIL FROM:<[dude@Qdude]>
+MAIL FROM:<du:de@google>
+MAIL FROM:<he ma@dog.com>
+MAIL FROM:<hadoop @totally>
+MAIL FROM:<	•daa.edu.net>
+MAIL FROM: <me@you> 
+MAIL FROM:: <me@you>
+MAIL FROM:<sup@sup>
+MAIL FROM:<kjnkjnkjnk>
+MAIL FROM:<dog@$meee>
+MAIL FROM:<dog@:meee>>
+MAIL FROM:<dog@9a>
+MAIL FROM:<dog@a9>
+MAIL FROM:<dog@aa>
+MAIL FROM:<dog@¬a>
+MAIL FROM:<dog@ aws>
+MAIL FROM:<dog@aws.edu..net>
+MAIL FROM:<dog@dog.dog.dog>
+MAIL FROM:<dog@a9.9a>
+MAIL FROM:<dog@a9.a9.a9>
+MAIL FROM:<dog@ZZ.XX>
+MAIL FROM:<dog@A9.A9.@.ee>
+MAIL FROM:<dog!@me.me>
+MAIL: FROM:<dog@me>
+MAIL:FROM<yo@yo>
+MAIL FROM: a <kjjhnk@Kjnkj>
+MAIL FROM:<jeffay@cs.unc.edu
+MAIL FROM:<jeffay @cs.unc.edu>
+MAIL FROM:<jeffay@cs.unc.edu >
+MAIL FROM:<jeffay@cs.unc@edu>
+MAIL FROM:<jeff(ay@cs.unc.edu>
+MAIL FROM:<(jeffay@cs.unc.edu>
+MAIL FROM:<jeffay@cs.unc.edu>a
+MAIL FROM: a<jeffay@.cs.unc.edu>
+MAIL FROM:<dog@d.com>
+MAIL FROM <kjeffay@cs.unc.edu>
+MAIL From:<kjeffay@cs.unc.edu>
+MAILFROM: <kjeffay@cs.unc.edu>
+MAIL FROM: <kjeffay@cs.unc.edu>
+MAIL FROM:<>
+MAIL FROM:<@cs.unc.edu>
+MAIL FROM:<kjeffaycs.unc.edu>
+MAIL FROM:<kjeffay@>
+MAIL FROM:<kjeffay @cs.unc.edu>
+MAIL FROM:<kjeffay	@cs.unc.edu>
+MAIL FROM:<kjeffay<@cs.unc.edu>
+MAIL FROM:<kjeffay>@cs.unc.edu>
+MAIL FROM:<kjeffay(@cs.unc.edu>
+MAIL FROM:<kjeffay)@cs.unc.edu>
+MAIL FROM:<kjeffay[@cs.unc.edu>
+MAIL FROM:<kjeffay]@cs.unc.edu>
+MAIL FROM:<kjeffay\@cs.unc.edu>
+MAIL FROM:<kjeffay.@cs.unc.edu>
+MAIL FROM:<kjeffay,@cs.unc.edu>
+MAIL FROM:<kjeffay;@cs.unc.edu>
+MAIL FROM:<kjeffay:@cs.unc.edu>
+MAIL FROM:<kjeffay"@cs.unc.edu>
+MAIL FROM:<kjeffay@c$.unc.edu>
+MAIL FROM:<kjeffay@cs.u%c.edu>
+MAIL FROM:<kjeffay@cs.unc.e*u>
+MAIL FROM:<kjeffay@.>
+MAIL FROM:<kjeffay@cs.unc.1du>
+MAIL FROM:<kjeffay@cs.2nc.edu>
+MAIL FROM:<kjeffay@3s.unc.edu>
+MAIL FROM:<kjeffay@#s.unc.edu>
+MAIL FROM:<kjeffay@cs.unc.>
+MAIL FROM:<!?$#%*@c3s23c.edu>
+MAIL FROM:<kjeffay@c3s23c.edu>
+MAIL FROM:<kjeffay@cs>
+MAIL FROM:<kjeffay@CS.UNC.EDU>
+MAIL FROM:<kjeffay@c1.u1.ed1>
+MAIL FROM:<kjeffay@cs.unc.edu>

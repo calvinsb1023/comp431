@@ -1,11 +1,15 @@
+import sys
+
+
 def print_err(s):
-    print 'ERROR -- ' + s
+    error = 'ERROR -- ' + s.rstrip()
+    print error.rstrip().lstrip()
 
 
 def check_mail_from_cmd(s):
     # Checks for 'MAIL'
     if s[0:4] != 'MAIL':
-        print_err('mail-from-cmd MAIL')
+        print_err('mail-from-cmd')
         return -1
     pos = 4
 
@@ -13,29 +17,29 @@ def check_mail_from_cmd(s):
     try:
         pos += check_whitespace(s[pos])
     except IndexError:
-        print_err('mail-from-cmd white_sp_1 index')
+        print_err('mail-from-cmd')
         return -1
 
     if pos == 4:
-        print_err('mail-from-cmd white_sp_1')
+        print_err('mail-from-cmd')
         return -1
 
     # Advances through additional whitespace
     pos = advance_whitespace(s, pos)
     if pos == -1:
-        print_err('mail-from-cmd white_sp_1 advance index')
+        print_err('mail-from-cmd')
         return -1
 
     # Check 'FROM:'
     if s[pos:pos+5] != 'FROM:':
-        print_err('mail-from-cmd FROM:')
+        print_err('mail-from-cmd')
         return -1
     pos += 5
 
     # Advances through additional whitespace
     pos = advance_whitespace(s, pos)
     if pos == -1:
-        print_err('mail-from-cmd white_sp_2 advance index')
+        print_err('mail-from-cmd')
         return -1
 
     # Checks the reverse path. If there's an error within path, assume path checker will handle the error
@@ -46,16 +50,16 @@ def check_mail_from_cmd(s):
     # Advances through additional whitespace after the path
     pos = advance_whitespace(s, pos)
     if pos == -1:
-        print_err('mail-from-cmd white_sp_path advance')
+        print_err('mail-from-cmd')
         return -1
 
     # Checks if there's a new line character
     try:
         if check_crlf(s[pos]) == 0:
-            print_err('mail-from-cmd new_line')
+            print_err('mail-from-cmd')
             return -1
     except IndexError:
-        print_err('mail-from-cmd new_line')
+        print_err('mail-from-cmd')
         return -1
 
     print 'Sender ok'
@@ -70,10 +74,10 @@ def check_path(s, pos):
     # Check for '<'
     try:
         if s[pos] != '<':
-            print_err('path <')
+            print_err('path')
             return -1
     except IndexError:
-        print_err('path < index')
+        print_err('path')
         return -1
     pos += 1
 
@@ -84,7 +88,7 @@ def check_path(s, pos):
 
     # Check for '>'
     if s[pos] != '>':
-        print_err('path >')
+        print_err('path')
         return -1
 
     pos += 1
@@ -98,10 +102,9 @@ def check_mailbox(s, pos):
         return -1
 
     # Check for '@'
-    print
     try:
         if s[pos] != '@':
-            print_err('mailbox @')
+            print_err('mailbox')
             return -1
     except IndexError:
         print_err('mailbox')
@@ -125,7 +128,6 @@ def check_local_part(s, pos):
 
 
 def check_domain(s, pos):
-    # TODO: check element, and if there is a '.' after the element, check domain
     pos = check_element(s, pos)
     if pos == -1:
         print_err('domain')
@@ -140,18 +142,22 @@ def check_element(s, pos):
 
 
 def check_name(s, pos):
-    # TODO: handle index errors
-    if check_a(s[pos]) == 1:
-        pos += 1
-        return check_let_dig_str(s, pos)
+    try:
+        if check_a(s[pos]) == 1 and check_let_dig(s[pos+1]) == 1:
+            pos += 1
+            return check_let_dig_str(s, pos)
+    except IndexError:
+        return -1
     return -1
 
 
 def check_let_dig_str(s, pos):
-    # TODO: handle index errors
-    while check_let_dig(s[pos]) == 1:
-        pos += 1
-    return pos
+    try:
+        while check_let_dig(s[pos]) == 1:
+            pos += 1
+        return pos
+    except IndexError:
+        return -1
 
 
 def check_let_dig(c):
@@ -160,12 +166,13 @@ def check_let_dig(c):
     return 0
 
 
-# Returns the length of a valid string as an offset
 def check_string(s, pos):
-    # TODO: handle index error
-    if check_c(s[pos]) == 1:
-        return 1 + check_string(s, pos + 1)
-    return 0
+    try:
+        if check_c(s[pos]) == 1:
+            return 1 + check_string(s, pos + 1)
+        return 0
+    except IndexError:
+        return -sys.maxint-1
 
 
 def check_char(c):
@@ -192,7 +199,7 @@ def check_digit(d):
 
 
 def check_special(c):
-    if c in '<>()[]\\.,;@"':
+    if c in '<>()[]\\.,;:@"':
         return 1
     return 0
 
@@ -218,11 +225,6 @@ def check_crlf(c):
     return 0
 
 
-mail_from_str_arr = ['MAIL FROM: <jeffay@cs.unc.edu>\n',
-                     'MAIL FROM:<jeffay@cs.unc.edu>\n',
-                     'MAIL FROM: <jeffay@cs.unc.edu>',
-                     'MAIL FROM: <jeffay@cs.unc.edu >']
-
-for s in mail_from_str_arr:
-    print s
-    check_mail_from_cmd(s)
+for line in sys.stdin:
+    print line.rstrip('\n').lstrip()
+    check_mail_from_cmd(line)
