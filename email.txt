@@ -1,0 +1,6 @@
+MAIL FROM:<barkerc@live.unc.edu>
+RCPT TO:<jeffay@cs.unc.edu>
+RCPT TO:<anotherperson@gmail.com>
+DATA
+This is a test.
+.

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7920ffe5-d29e-4409-821b-9ff663b10e72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SMTP1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ParseB.py" afterPath="$PROJECT_DIR$/ParseB.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP1.py" afterPath="$PROJECT_DIR$/SMTP1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parse_test.txt" afterPath="$PROJECT_DIR$/parse_test.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,46 +21,41 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Parse.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Parse.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1770">
-                  <caret line="118" column="14" lean-forward="false" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ParseB.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ParseB.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SMTP1.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/SMTP1.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="SMTP1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SMTP1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="435" column="0" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+              <folding>
+                <element signature="e#2932#3391#0" expanded="false" />
+                <element signature="e#4161#4212#0" expanded="false" />
+                <element signature="e#4290#4497#0" expanded="false" />
+                <element signature="e#4529#4720#0" expanded="false" />
+                <element signature="e#4823#4848#0" expanded="false" />
+                <element signature="e#4879#5237#0" expanded="false" />
+                <element signature="e#5271#5683#0" expanded="false" />
+                <element signature="e#5720#5811#0" expanded="false" />
+                <element signature="e#5844#5983#0" expanded="false" />
+                <element signature="e#6017#6042#0" expanded="false" />
+                <element signature="e#6073#6264#0" expanded="false" />
+                <element signature="e#6302#6429#0" expanded="false" />
+                <element signature="e#6458#6530#0" expanded="false" />
+                <element signature="e#6563#6717#0" expanded="false" />
+                <element signature="e#6743#6760#0" expanded="false" />
+                <element signature="e#6783#6901#0" expanded="false" />
+                <element signature="e#6924#7017#0" expanded="false" />
+                <element signature="e#7044#7095#0" expanded="false" />
+                <element signature="e#7124#7179#0" expanded="false" />
+                <element signature="e#7211#7266#0" expanded="false" />
+                <element signature="e#7305#7430#0" expanded="false" />
+                <element signature="e#9303#9924#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,7 +73,6 @@
       <find>print str</find>
       <find>mailbo</find>
       <find>print</find>
-      <find>print</find>
       <find>white_sp_path advance</find>
       <find>domain</find>
       <find>char</find>
@@ -88,6 +82,10 @@
       <find>check_st</find>
       <find>check_s</find>
       <find>check_str</find>
+      <find>check_rec</find>
+      <find>check</find>
+      <find>recogn</find>
+      <find>recogniz</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,6 +97,7 @@
         <option value="$PROJECT_DIR$/Parse.py" />
         <option value="$PROJECT_DIR$/Test_Read.py" />
         <option value="$PROJECT_DIR$/ParseB.py" />
+        <option value="$PROJECT_DIR$/SMTP1.py" />
       </list>
     </option>
   </component>
@@ -469,7 +468,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -531,9 +532,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SMTP1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="567">
+          <caret line="435" column="0" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+          <folding>
+            <element signature="e#2932#3391#0" expanded="false" />
+            <element signature="e#4161#4212#0" expanded="false" />
+            <element signature="e#4290#4497#0" expanded="false" />
+            <element signature="e#4529#4720#0" expanded="false" />
+            <element signature="e#4823#4848#0" expanded="false" />
+            <element signature="e#4879#5237#0" expanded="false" />
+            <element signature="e#5271#5683#0" expanded="false" />
+            <element signature="e#5720#5811#0" expanded="false" />
+            <element signature="e#5844#5983#0" expanded="false" />
+            <element signature="e#6017#6042#0" expanded="false" />
+            <element signature="e#6073#6264#0" expanded="false" />
+            <element signature="e#6302#6429#0" expanded="false" />
+            <element signature="e#6458#6530#0" expanded="false" />
+            <element signature="e#6563#6717#0" expanded="false" />
+            <element signature="e#6743#6760#0" expanded="false" />
+            <element signature="e#6783#6901#0" expanded="false" />
+            <element signature="e#6924#7017#0" expanded="false" />
+            <element signature="e#7044#7095#0" expanded="false" />
+            <element signature="e#7124#7179#0" expanded="false" />
+            <element signature="e#7211#7266#0" expanded="false" />
+            <element signature="e#7305#7430#0" expanded="false" />
+            <element signature="e#9303#9924#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
