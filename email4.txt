@@ -1,0 +1,4 @@
+MAIL FROM:<barkerc@live.unc.edu>
+DATA
+This is a test.
+.

@@ -18,7 +18,7 @@ def check_mail_from_cmd(s):
     # Checks the reverse path. If there's an error within path, will report 501 here
     start = pos + 1
     pos = check_reverse_path(s, pos)
-    end = pos -1
+    end = pos - 1
     if pos == -1:
         return 501  # 501 Syntax error in parameters or arguments
 
@@ -82,9 +82,9 @@ def check_rcpt_to_cmd(s):
         return 501  # 501 Syntax error in parameters or arguments
 
     # Checks the forward path. If there's an error within path, will report 501
-    start = pos+1
+    start = pos + 1
     pos = check_forward_path(s, pos)
-    end = pos-1
+    end = pos - 1
     if pos == -1:
         return 501  # 501 Syntax error in parameters or arguments
 
@@ -355,11 +355,11 @@ def process_message(MAIL_FROM, RCPT_TO, DATA):
         with open(direct, append_write) as fwd_file:
 
             # Write mail from
-            fwd_file.write('From: ' + MAIL_FROM + '\n')
+            fwd_file.write('From: <' + MAIL_FROM + '>\n')
 
             # Write all recipients
             for rcpt in RCPT_TO:
-                fwd_file.write('To: ' + rcpt + '\n')
+                fwd_file.write('To: <' + rcpt + '>\n')
 
             for text in DATA:
                 fwd_file.write(text)
