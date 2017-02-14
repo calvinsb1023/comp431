@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7920ffe5-d29e-4409-821b-9ff663b10e72" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SMTP2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wrksht7.docx" afterPath="$PROJECT_DIR$/Wrksht7.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP1.py" afterPath="$PROJECT_DIR$/SMTP1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forward/anotherperson@gmail.com" afterPath="$PROJECT_DIR$/forward/anotherperson@gmail.com" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forward/jeffay@cs.unc.edu" afterPath="$PROJECT_DIR$/forward/jeffay@cs.unc.edu" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,13 +23,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SMTP1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SMTP1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SMTP1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="430" column="28" lean-forward="true" selection-start-line="430" selection-start-column="28" selection-end-line="430" selection-end-column="28" />
+            <state relative-caret-position="787">
+              <caret line="367" column="17" lean-forward="false" selection-start-line="367" selection-start-column="17" selection-end-line="367" selection-end-column="17" />
               <folding>
+                <element signature="e#84#1104#0" expanded="false" />
+                <element signature="e#1242#1705#0" expanded="false" />
+                <element signature="e#1767#2805#0" expanded="false" />
                 <element signature="e#2937#3396#0" expanded="false" />
+                <element signature="e#3476#4055#0" expanded="false" />
                 <element signature="e#4166#4217#0" expanded="false" />
                 <element signature="e#4295#4502#0" expanded="false" />
                 <element signature="e#4534#4725#0" expanded="false" />
@@ -51,7 +54,22 @@
                 <element signature="e#7129#7184#0" expanded="false" />
                 <element signature="e#7216#7271#0" expanded="false" />
                 <element signature="e#7310#7435#0" expanded="false" />
+                <element signature="e#7492#7535#0" expanded="false" />
+                <element signature="e#7624#8347#0" expanded="false" />
+                <element signature="e#8372#10314#0" expanded="false" />
                 <element signature="e#9312#9933#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SMTP2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SMTP2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,6 +118,7 @@
         <option value="$PROJECT_DIR$/Test_Read.py" />
         <option value="$PROJECT_DIR$/ParseB.py" />
         <option value="$PROJECT_DIR$/SMTP1.py" />
+        <option value="$PROJECT_DIR$/SMTP2.py" />
       </list>
     </option>
   </component>
@@ -110,10 +129,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
-    <option name="y" value="23" />
-    <option name="width" value="1222" />
-    <option name="height" value="777" />
+    <option name="x" value="1280" />
+    <option name="y" value="-756" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -130,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -145,6 +163,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -437,10 +456,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="23" width="1222" height="777" extended-state="0" />
+    <frame x="1280" y="-756" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.007627119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.087326944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -498,7 +517,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
             <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
             <element signature="e#4166#4217#0" expanded="false" />
             <element signature="e#4295#4502#0" expanded="false" />
             <element signature="e#4534#4725#0" expanded="false" />
@@ -519,6 +542,47 @@
             <element signature="e#7129#7184#0" expanded="false" />
             <element signature="e#7216#7271#0" expanded="false" />
             <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+            <element signature="e#8372#10314#0" expanded="false" />
+            <element signature="e#9312#9933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
+            <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
+            <element signature="e#4166#4217#0" expanded="false" />
+            <element signature="e#4295#4502#0" expanded="false" />
+            <element signature="e#4534#4725#0" expanded="false" />
+            <element signature="e#4828#4853#0" expanded="false" />
+            <element signature="e#4884#5242#0" expanded="false" />
+            <element signature="e#5276#5688#0" expanded="false" />
+            <element signature="e#5725#5816#0" expanded="false" />
+            <element signature="e#5849#5988#0" expanded="false" />
+            <element signature="e#6022#6047#0" expanded="false" />
+            <element signature="e#6078#6269#0" expanded="false" />
+            <element signature="e#6307#6434#0" expanded="false" />
+            <element signature="e#6463#6535#0" expanded="false" />
+            <element signature="e#6568#6722#0" expanded="false" />
+            <element signature="e#6748#6765#0" expanded="false" />
+            <element signature="e#6788#6906#0" expanded="false" />
+            <element signature="e#6929#7022#0" expanded="false" />
+            <element signature="e#7049#7100#0" expanded="false" />
+            <element signature="e#7129#7184#0" expanded="false" />
+            <element signature="e#7216#7271#0" expanded="false" />
+            <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+            <element signature="e#8372#10314#0" expanded="false" />
             <element signature="e#9312#9933#0" expanded="false" />
           </folding>
         </state>
@@ -575,10 +639,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SMTP1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="430" column="28" lean-forward="true" selection-start-line="430" selection-start-column="28" selection-end-line="430" selection-end-column="28" />
+        <state relative-caret-position="787">
+          <caret line="367" column="17" lean-forward="false" selection-start-line="367" selection-start-column="17" selection-end-line="367" selection-end-column="17" />
           <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
             <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
             <element signature="e#4166#4217#0" expanded="false" />
             <element signature="e#4295#4502#0" expanded="false" />
             <element signature="e#4534#4725#0" expanded="false" />
@@ -599,7 +667,20 @@
             <element signature="e#7129#7184#0" expanded="false" />
             <element signature="e#7216#7271#0" expanded="false" />
             <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+            <element signature="e#8372#10314#0" expanded="false" />
             <element signature="e#9312#9933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
