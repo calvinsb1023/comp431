@@ -375,63 +375,63 @@ def read_input():
     DATA = []
 
     # Time to finally process it
-    for line in sys.stdin:
+    line = sys.stdin.readline()
 
-        print line.rstrip('\n').lstrip()
+    print line.rstrip('\n').lstrip()
 
-        # If we're in the mail-from state
-        if current_state == "MAIL_FROM":
-            mail_from = check_mail_from_cmd(line)
+    # If we're in the mail-from state
+    if current_state == "MAIL_FROM":
+        mail_from = check_mail_from_cmd(line)
 
-            if mail_from == 500:
-                print "500 Syntax error: command unrecognized"
+        if mail_from == 500:
+            print "500 Syntax error: command unrecognized"
 
-            elif mail_from == 503:
+        elif mail_from == 503:
+            print "503 Bad sequence of commands"
+
+        elif mail_from == 501:
+            print "501 Syntax error in parameters or arguments"
+
+        else:
+            MAIL_FROM = mail_from
+            current_state = "RCPT_TO"
+            print "250 OK"
+
+    # If we're in the rcpt-to state
+    elif current_state == "RCPT_TO":
+        rcpt_to = check_rcpt_to_cmd(line)
+
+        if rcpt_to == 500:
+            print "500 Syntax error: command unrecognized"
+
+        elif rcpt_to == 503:
+
+            if RCPT_TO and check_data_cmd(line) == 354:
+                current_state = "DATA"
+                print '354 Start mail input; end with <CRLF>.<CRLF>'
+
+            else:
                 print "503 Bad sequence of commands"
 
-            elif mail_from == 501:
-                print "501 Syntax error in parameters or arguments"
+        elif rcpt_to == 501:
+            print "501 Syntax error in parameters or arguments"
 
-            else:
-                MAIL_FROM = mail_from
-                current_state = "RCPT_TO"
-                print "250 OK"
+        else:
+            RCPT_TO.append(rcpt_to)
+            print "250 OK"
 
-        # If we're in the rcpt-to state
-        elif current_state == "RCPT_TO":
-            rcpt_to = check_rcpt_to_cmd(line)
+    # If we're in the data state
+    elif current_state == "DATA":
+        if line == ".\n":
+            print "250 OK"
+            process_message(MAIL_FROM, RCPT_TO, DATA)
 
-            if rcpt_to == 500:
-                print "500 Syntax error: command unrecognized"
-
-            elif rcpt_to == 503:
-
-                if RCPT_TO and check_data_cmd(line) == 354:
-                    current_state = "DATA"
-                    print '354 Start mail input; end with <CRLF>.<CRLF>'
-
-                else:
-                    print "503 Bad sequence of commands"
-
-            elif rcpt_to == 501:
-                print "501 Syntax error in parameters or arguments"
-
-            else:
-                RCPT_TO.append(rcpt_to)
-                print "250 OK"
-
-        # If we're in the data state
-        elif current_state == "DATA":
-            if line == ".\n":
-                print "250 OK"
-                process_message(MAIL_FROM, RCPT_TO, DATA)
-
-                # We reset the mail from, rcpt, and data
-                MAIL_FROM = ""
-                RCPT_TO = []
-                DATA = []
-            else:
-                DATA.append(line)
+            # We reset the mail from, rcpt, and data
+            MAIL_FROM = ""
+            RCPT_TO = []
+            DATA = []
+        else:
+            DATA.append(line)
 
 
 read_input()
