@@ -553,8 +553,8 @@ if __name__ == "__main__":
     while state != "ready":
         state = prompt_input(state, email)
 
-    for line in email.get_msg():
-        sys.stdout.write(line)
+#    for line in email.get_msg():
+#        sys.stdout.write(line)
 
     # Sets up socket interface
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -567,7 +567,9 @@ if __name__ == "__main__":
 
     sock.connect(server_address)
     data = sock.recv(2048)
-    print >> sys.stderr, '%s' % data
+
+    sys.stdout.write(data)
+    # print >> sys.stderr, '%s' % data
 
     try:
         # Send data

@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7920ffe5-d29e-4409-821b-9ff663b10e72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/worksheets/Wrksht9.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Test_Read" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wrksht9.docx" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht6.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht6.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht7.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht7.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht8.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht8.docx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/email.txt" afterPath="$PROJECT_DIR$/test-cases/email.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/email1.txt" afterPath="$PROJECT_DIR$/test-cases/email1.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/email2.txt" afterPath="$PROJECT_DIR$/test-cases/email2.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/email3.txt" afterPath="$PROJECT_DIR$/test-cases/email3.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/email4.txt" afterPath="$PROJECT_DIR$/test-cases/email4.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/end-msg.txt" afterPath="$PROJECT_DIR$/test-cases/end-msg.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fwd-file.txt" afterPath="$PROJECT_DIR$/test-cases/fwd-file.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test_nullspace.txt" afterPath="$PROJECT_DIR$/test-cases/test_nullspace.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP1_test.py" afterPath="$PROJECT_DIR$/SMTP1_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP2.py" afterPath="$PROJECT_DIR$/SMTP2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client.py" afterPath="$PROJECT_DIR$/Client.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +24,8 @@
       <file leaf-file-name="Client.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="550" column="19" lean-forward="true" selection-start-line="550" selection-start-column="19" selection-end-line="550" selection-end-column="19" />
+            <state relative-caret-position="432">
+              <caret line="571" column="6" lean-forward="false" selection-start-line="571" selection-start-column="6" selection-end-line="571" selection-end-column="6" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#1263#1726#0" expanded="false" />
@@ -970,8 +952,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="550" column="19" lean-forward="true" selection-start-line="550" selection-start-column="19" selection-end-line="550" selection-end-column="19" />
+        <state relative-caret-position="432">
+          <caret line="571" column="6" lean-forward="false" selection-start-line="571" selection-start-column="6" selection-end-line="571" selection-end-column="6" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#1263#1726#0" expanded="false" />
