@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7920ffe5-d29e-4409-821b-9ff663b10e72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SMTP1_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wrksht7.docx" afterPath="$PROJECT_DIR$/Wrksht7.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wrksht8.docx" afterPath="$PROJECT_DIR$/Wrksht8.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/worksheets/Wrksht9.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Test_Read" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Wrksht9.docx" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht6.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht6.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht7.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht7.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Wrksht8.docx" afterPath="$PROJECT_DIR$/worksheets/Wrksht8.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/email.txt" afterPath="$PROJECT_DIR$/test-cases/email.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/email1.txt" afterPath="$PROJECT_DIR$/test-cases/email1.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/email2.txt" afterPath="$PROJECT_DIR$/test-cases/email2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/email3.txt" afterPath="$PROJECT_DIR$/test-cases/email3.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/email4.txt" afterPath="$PROJECT_DIR$/test-cases/email4.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/end-msg.txt" afterPath="$PROJECT_DIR$/test-cases/end-msg.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fwd-file.txt" afterPath="$PROJECT_DIR$/test-cases/fwd-file.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test_nullspace.txt" afterPath="$PROJECT_DIR$/test-cases/test_nullspace.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP1.py" afterPath="$PROJECT_DIR$/SMTP1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP1_test.py" afterPath="$PROJECT_DIR$/SMTP1_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SMTP2.py" afterPath="$PROJECT_DIR$/SMTP2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,62 +39,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SMTP1.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <file leaf-file-name="Client.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-              <folding>
-                <element signature="e#84#1104#0" expanded="false" />
-                <element signature="e#1242#1705#0" expanded="false" />
-                <element signature="e#1767#2805#0" expanded="false" />
-                <element signature="e#2937#3396#0" expanded="false" />
-                <element signature="e#3476#4055#0" expanded="false" />
-                <element signature="e#4166#4217#0" expanded="false" />
-                <element signature="e#4295#4502#0" expanded="false" />
-                <element signature="e#4534#4725#0" expanded="false" />
-                <element signature="e#4828#4853#0" expanded="false" />
-                <element signature="e#4884#5242#0" expanded="false" />
-                <element signature="e#5276#5688#0" expanded="false" />
-                <element signature="e#5725#5816#0" expanded="false" />
-                <element signature="e#5849#5988#0" expanded="false" />
-                <element signature="e#6022#6047#0" expanded="false" />
-                <element signature="e#6078#6269#0" expanded="false" />
-                <element signature="e#6307#6434#0" expanded="false" />
-                <element signature="e#6463#6535#0" expanded="false" />
-                <element signature="e#6568#6722#0" expanded="false" />
-                <element signature="e#6748#6765#0" expanded="false" />
-                <element signature="e#6788#6906#0" expanded="false" />
-                <element signature="e#6929#7022#0" expanded="false" />
-                <element signature="e#7049#7100#0" expanded="false" />
-                <element signature="e#7129#7184#0" expanded="false" />
-                <element signature="e#7216#7271#0" expanded="false" />
-                <element signature="e#7310#7435#0" expanded="false" />
-                <element signature="e#7492#7535#0" expanded="false" />
-                <element signature="e#7624#8347#0" expanded="false" />
-                <element signature="e#9312#9933#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SMTP1_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SMTP1_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="393" column="0" lean-forward="true" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SMTP2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SMTP2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1177">
-              <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+            <state relative-caret-position="27">
+              <caret line="550" column="19" lean-forward="true" selection-start-line="550" selection-start-column="19" selection-end-line="550" selection-end-column="19" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#1263#1726#0" expanded="false" />
+                <element signature="e#1788#2826#0" expanded="false" />
+                <element signature="e#2958#3417#0" expanded="false" />
+                <element signature="e#3497#4076#0" expanded="false" />
+                <element signature="e#4187#4238#0" expanded="false" />
+                <element signature="e#4316#4523#0" expanded="false" />
+                <element signature="e#4555#4746#0" expanded="false" />
+                <element signature="e#4849#4874#0" expanded="false" />
+                <element signature="e#4905#5263#0" expanded="false" />
+                <element signature="e#5297#5709#0" expanded="false" />
+                <element signature="e#5746#5837#0" expanded="false" />
+                <element signature="e#5870#6009#0" expanded="false" />
+                <element signature="e#6043#6068#0" expanded="false" />
+                <element signature="e#6099#6290#0" expanded="false" />
+                <element signature="e#6328#6455#0" expanded="false" />
+                <element signature="e#6484#6556#0" expanded="false" />
+                <element signature="e#6589#6743#0" expanded="false" />
+                <element signature="e#6769#6786#0" expanded="false" />
+                <element signature="e#6809#6927#0" expanded="false" />
+                <element signature="e#6950#7043#0" expanded="false" />
+                <element signature="e#7070#7121#0" expanded="false" />
+                <element signature="e#7150#7205#0" expanded="false" />
+                <element signature="e#7237#7292#0" expanded="false" />
+                <element signature="e#7331#7456#0" expanded="false" />
+                <element signature="e#7513#7556#0" expanded="false" />
+                <element signature="e#7833#7922#0" expanded="false" />
+                <element signature="e#8008#10006#0" expanded="false" />
+                <element signature="e#10035#10738#0" expanded="false" />
+                <element signature="e#12782#12798#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,6 +112,15 @@
       <find>recogn</find>
       <find>recogniz</find>
       <find>205</find>
+      <find>myser</find>
+      <find>503</find>
+      <find>10</find>
+      <find>Dom code</find>
+      <find>HELO</find>
+      <find>Checking</find>
+      <find>QUIT</find>
+      <find>something</find>
+      <find>DATA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,9 +132,11 @@
         <option value="$PROJECT_DIR$/Parse.py" />
         <option value="$PROJECT_DIR$/Test_Read.py" />
         <option value="$PROJECT_DIR$/ParseB.py" />
-        <option value="$PROJECT_DIR$/SMTP2.py" />
-        <option value="$PROJECT_DIR$/SMTP1_test.py" />
         <option value="$PROJECT_DIR$/SMTP1.py" />
+        <option value="$PROJECT_DIR$/SMTP1_test.py" />
+        <option value="$PROJECT_DIR$/SMTP2.py" />
+        <option value="$PROJECT_DIR$/Server.py" />
+        <option value="$PROJECT_DIR$/Client.py" />
       </list>
     </option>
   </component>
@@ -143,10 +147,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-756" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="48" />
+    <option name="y" value="23" />
+    <option name="width" value="1232" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -177,8 +181,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,6 +194,11 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test-cases" />
+      <recent name="$PROJECT_DIR$/test-emails" />
+      <recent name="$PROJECT_DIR$/worksheets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -470,10 +479,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-756" width="1920" height="1057" extended-state="1" />
+    <frame x="48" y="23" width="1232" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.087326944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1882353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -521,15 +530,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SMTP1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="5700">
+          <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
           <folding>
             <element signature="e#84#1104#0" expanded="false" />
             <element signature="e#1242#1705#0" expanded="false" />
@@ -558,7 +567,24 @@
             <element signature="e#7310#7435#0" expanded="false" />
             <element signature="e#7492#7535#0" expanded="false" />
             <element signature="e#7624#8347#0" expanded="false" />
-            <element signature="e#9312#9933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6360">
+          <caret line="424" column="33" lean-forward="true" selection-start-line="424" selection-start-column="33" selection-end-line="424" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1918#2397#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,7 +621,186 @@
             <element signature="e#7310#7435#0" expanded="false" />
             <element signature="e#7492#7535#0" expanded="false" />
             <element signature="e#7624#8347#0" expanded="false" />
-            <element signature="e#9312#9933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
+            <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
+            <element signature="e#4166#4217#0" expanded="false" />
+            <element signature="e#4295#4502#0" expanded="false" />
+            <element signature="e#4534#4725#0" expanded="false" />
+            <element signature="e#4828#4853#0" expanded="false" />
+            <element signature="e#4884#5242#0" expanded="false" />
+            <element signature="e#5276#5688#0" expanded="false" />
+            <element signature="e#5725#5816#0" expanded="false" />
+            <element signature="e#5849#5988#0" expanded="false" />
+            <element signature="e#6022#6047#0" expanded="false" />
+            <element signature="e#6078#6269#0" expanded="false" />
+            <element signature="e#6307#6434#0" expanded="false" />
+            <element signature="e#6463#6535#0" expanded="false" />
+            <element signature="e#6568#6722#0" expanded="false" />
+            <element signature="e#6748#6765#0" expanded="false" />
+            <element signature="e#6788#6906#0" expanded="false" />
+            <element signature="e#6929#7022#0" expanded="false" />
+            <element signature="e#7049#7100#0" expanded="false" />
+            <element signature="e#7129#7184#0" expanded="false" />
+            <element signature="e#7216#7271#0" expanded="false" />
+            <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5895">
+          <caret line="393" column="0" lean-forward="false" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="109" column="23" lean-forward="false" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+          <folding>
+            <element signature="e#1918#2397#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
+            <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
+            <element signature="e#4166#4217#0" expanded="false" />
+            <element signature="e#4295#4502#0" expanded="false" />
+            <element signature="e#4534#4725#0" expanded="false" />
+            <element signature="e#4828#4853#0" expanded="false" />
+            <element signature="e#4884#5242#0" expanded="false" />
+            <element signature="e#5276#5688#0" expanded="false" />
+            <element signature="e#5725#5816#0" expanded="false" />
+            <element signature="e#5849#5988#0" expanded="false" />
+            <element signature="e#6022#6047#0" expanded="false" />
+            <element signature="e#6078#6269#0" expanded="false" />
+            <element signature="e#6307#6434#0" expanded="false" />
+            <element signature="e#6463#6535#0" expanded="false" />
+            <element signature="e#6568#6722#0" expanded="false" />
+            <element signature="e#6748#6765#0" expanded="false" />
+            <element signature="e#6788#6906#0" expanded="false" />
+            <element signature="e#6929#7022#0" expanded="false" />
+            <element signature="e#7049#7100#0" expanded="false" />
+            <element signature="e#7129#7184#0" expanded="false" />
+            <element signature="e#7216#7271#0" expanded="false" />
+            <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5895">
+          <caret line="393" column="0" lean-forward="true" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+          <folding>
+            <element signature="e#1918#2397#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
+            <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
+            <element signature="e#4166#4217#0" expanded="false" />
+            <element signature="e#4295#4502#0" expanded="false" />
+            <element signature="e#4534#4725#0" expanded="false" />
+            <element signature="e#4828#4853#0" expanded="false" />
+            <element signature="e#4884#5242#0" expanded="false" />
+            <element signature="e#5276#5688#0" expanded="false" />
+            <element signature="e#5725#5816#0" expanded="false" />
+            <element signature="e#5849#5988#0" expanded="false" />
+            <element signature="e#6022#6047#0" expanded="false" />
+            <element signature="e#6078#6269#0" expanded="false" />
+            <element signature="e#6307#6434#0" expanded="false" />
+            <element signature="e#6463#6535#0" expanded="false" />
+            <element signature="e#6568#6722#0" expanded="false" />
+            <element signature="e#6748#6765#0" expanded="false" />
+            <element signature="e#6788#6906#0" expanded="false" />
+            <element signature="e#6929#7022#0" expanded="false" />
+            <element signature="e#7049#7100#0" expanded="false" />
+            <element signature="e#7129#7184#0" expanded="false" />
+            <element signature="e#7216#7271#0" expanded="false" />
+            <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#1104#0" expanded="false" />
+            <element signature="e#1242#1705#0" expanded="false" />
+            <element signature="e#1767#2805#0" expanded="false" />
+            <element signature="e#2937#3396#0" expanded="false" />
+            <element signature="e#3476#4055#0" expanded="false" />
+            <element signature="e#4166#4217#0" expanded="false" />
+            <element signature="e#4295#4502#0" expanded="false" />
+            <element signature="e#4534#4725#0" expanded="false" />
+            <element signature="e#4828#4853#0" expanded="false" />
+            <element signature="e#4884#5242#0" expanded="false" />
+            <element signature="e#5276#5688#0" expanded="false" />
+            <element signature="e#5725#5816#0" expanded="false" />
+            <element signature="e#5849#5988#0" expanded="false" />
+            <element signature="e#6022#6047#0" expanded="false" />
+            <element signature="e#6078#6269#0" expanded="false" />
+            <element signature="e#6307#6434#0" expanded="false" />
+            <element signature="e#6463#6535#0" expanded="false" />
+            <element signature="e#6568#6722#0" expanded="false" />
+            <element signature="e#6748#6765#0" expanded="false" />
+            <element signature="e#6788#6906#0" expanded="false" />
+            <element signature="e#6929#7022#0" expanded="false" />
+            <element signature="e#7049#7100#0" expanded="false" />
+            <element signature="e#7129#7184#0" expanded="false" />
+            <element signature="e#7216#7271#0" expanded="false" />
+            <element signature="e#7310#7435#0" expanded="false" />
+            <element signature="e#7492#7535#0" expanded="false" />
+            <element signature="e#7624#8347#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,13 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test_Read.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ParseB.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -649,28 +847,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+    <entry file="file://$PROJECT_DIR$/parse_test.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1177">
-          <caret line="109" column="23" lean-forward="true" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-cases/fwd-file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-cases/end-msg.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SMTP1_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="393" column="0" lean-forward="true" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+        <state relative-caret-position="697">
+          <caret line="429" column="38" lean-forward="false" selection-start-line="429" selection-start-column="38" selection-end-line="429" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <element signature="e#1918#2397#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SMTP1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="380" column="0" lean-forward="true" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+        <state relative-caret-position="-273">
+          <caret line="309" column="0" lean-forward="true" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
           <folding>
             <element signature="e#84#1104#0" expanded="false" />
             <element signature="e#1242#1705#0" expanded="false" />
@@ -699,7 +929,80 @@
             <element signature="e#7310#7435#0" expanded="false" />
             <element signature="e#7492#7535#0" expanded="false" />
             <element signature="e#7624#8347#0" expanded="false" />
-            <element signature="e#9312#9933#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="519" column="51" lean-forward="true" selection-start-line="519" selection-start-column="51" selection-end-line="519" selection-end-column="51" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+            <element signature="e#104#1217#0" expanded="false" />
+            <element signature="e#1355#1818#0" expanded="false" />
+            <element signature="e#1880#2962#0" expanded="false" />
+            <element signature="e#3094#3553#0" expanded="false" />
+            <element signature="e#3633#4212#0" expanded="false" />
+            <element signature="e#4323#4374#0" expanded="false" />
+            <element signature="e#4485#4536#0" expanded="false" />
+            <element signature="e#4614#4825#0" expanded="false" />
+            <element signature="e#4857#5048#0" expanded="false" />
+            <element signature="e#5087#5112#0" expanded="false" />
+            <element signature="e#5151#5176#0" expanded="false" />
+            <element signature="e#5207#5565#0" expanded="false" />
+            <element signature="e#5599#6011#0" expanded="false" />
+            <element signature="e#6048#6139#0" expanded="false" />
+            <element signature="e#7153#7225#0" expanded="false" />
+            <element signature="e#7258#7412#0" expanded="false" />
+            <element signature="e#7438#7455#0" expanded="false" />
+            <element signature="e#7478#7596#0" expanded="false" />
+            <element signature="e#7619#7712#0" expanded="false" />
+            <element signature="e#7739#7790#0" expanded="false" />
+            <element signature="e#7819#7874#0" expanded="false" />
+            <element signature="e#7906#7961#0" expanded="false" />
+            <element signature="e#8000#8125#0" expanded="false" />
+            <element signature="e#8182#8225#0" expanded="false" />
+            <element signature="e#8314#9037#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="550" column="19" lean-forward="true" selection-start-line="550" selection-start-column="19" selection-end-line="550" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1263#1726#0" expanded="false" />
+            <element signature="e#1788#2826#0" expanded="false" />
+            <element signature="e#2958#3417#0" expanded="false" />
+            <element signature="e#3497#4076#0" expanded="false" />
+            <element signature="e#4187#4238#0" expanded="false" />
+            <element signature="e#4316#4523#0" expanded="false" />
+            <element signature="e#4555#4746#0" expanded="false" />
+            <element signature="e#4849#4874#0" expanded="false" />
+            <element signature="e#4905#5263#0" expanded="false" />
+            <element signature="e#5297#5709#0" expanded="false" />
+            <element signature="e#5746#5837#0" expanded="false" />
+            <element signature="e#5870#6009#0" expanded="false" />
+            <element signature="e#6043#6068#0" expanded="false" />
+            <element signature="e#6099#6290#0" expanded="false" />
+            <element signature="e#6328#6455#0" expanded="false" />
+            <element signature="e#6484#6556#0" expanded="false" />
+            <element signature="e#6589#6743#0" expanded="false" />
+            <element signature="e#6769#6786#0" expanded="false" />
+            <element signature="e#6809#6927#0" expanded="false" />
+            <element signature="e#6950#7043#0" expanded="false" />
+            <element signature="e#7070#7121#0" expanded="false" />
+            <element signature="e#7150#7205#0" expanded="false" />
+            <element signature="e#7237#7292#0" expanded="false" />
+            <element signature="e#7331#7456#0" expanded="false" />
+            <element signature="e#7513#7556#0" expanded="false" />
+            <element signature="e#7833#7922#0" expanded="false" />
+            <element signature="e#8008#10006#0" expanded="false" />
+            <element signature="e#10035#10738#0" expanded="false" />
+            <element signature="e#12782#12798#0" expanded="false" />
           </folding>
         </state>
       </provider>

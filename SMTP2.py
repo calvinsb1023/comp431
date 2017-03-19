@@ -38,7 +38,7 @@ def process_line(state, line):
 
         # If the response is not a success, we break and QUIT
         else:
-            sys.stdout.write("QUIT\n")
+            # sys.stdout.write("QUIT\n")
             return "broken"
 
     elif state == "to":
@@ -70,12 +70,10 @@ def process_line(state, line):
 
             # If the response is not a success, we break and QUIT
             else:
-                sys.stdout.write("QUIT\n")
                 return "broken"
 
         # If the response is not a success, we break and QUIT
         else:
-            sys.stdout.write("QUIT\n")
             return "broken"
 
     elif state == "data":
@@ -96,7 +94,6 @@ def process_line(state, line):
 
             # If the response is not a success, we break and QUIT
             else:
-                sys.stdout.write("QUIT\n")
                 return "broken"
         else:
             sys.stdout.write(line)
@@ -131,5 +128,5 @@ def read_input(path):
     sys.stdout.write("QUIT\n")
 
 
-#sys.argv[1]
-read_input(sys.argv[1])
+if __name__ == "__main__":
+    read_input(sys.argv[1])

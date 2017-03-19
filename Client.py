@@ -1,5 +1,6 @@
-import sys, os
-
+import sys
+import socket
+import re
 
 
 # Checks the "MAIL FROM:" command
@@ -35,7 +36,7 @@ def check_mail_from_cmd(s):
     except IndexError:
         return 501  # 501 Syntax error in parameters or arguments
 
-    #return 250  # 250 OK
+    # return 250  # 250 OK
     return s[start:end]
 
 
@@ -338,102 +339,248 @@ def check_crlf(c):
     return 0
 
 
-# Processes the message into files
-def process_message(MAIL_FROM, RCPT_TO, DATA):
-    for receiver in RCPT_TO:
-        direct = "forward/"
+# Generates a mail_from_cmd
+def gen_from(s):
+    return "MAIL FROM: <" + s.rstrip('\n') + '>\n'
 
-        # Create the 'forward directory' if it doesn't exist
-        if not os.path.exists(direct):
-            os.makedirs(direct)
 
-        direct += receiver
-        if os.path.exists(direct):
-            append_write = 'a'  # append if the file exists
+# Generates a rcpt_to_cmd
+def gen_to(s):
+    return "RCPT TO: <" + s.rstrip('\n') + '>\n'
+
+
+# Determines if a response is a success or not
+def is_success(code, expected):
+
+    filtered_code = int(re.search(r'\d+', code).group())
+    return filtered_code == expected
+
+
+# Prints output from a line and returns a state
+def process_line(state, line):
+    if state == "from":
+
+        # Outputs mail-from-cmd
+        sys.stdout.write(gen_from(line))
+
+        # Reads response code
+        message = sys.stdin.readline()
+
+        # Echos response code
+        sys.stderr.write(message)
+
+        # If response if a success, we continue
+        if is_success(message, 250):
+            return "to"
+
+        # If the response is not a success, we break and QUIT
         else:
-            append_write = 'w'  # write if the file doesn't exist
+            # sys.stdout.write("QUIT\n")
+            return "broken"
 
-        with open(direct, append_write) as fwd_file:
+    elif state == "to":
 
-            # Write mail from
-            fwd_file.write('From: <' + MAIL_FROM + '>\n')
+        # Outputs rcpt-to-cmd
+        sys.stdout.write(gen_to(line))
 
-            # Write all recipients
-            for rcpt in RCPT_TO:
-                fwd_file.write('To: <' + rcpt + '>\n')
+        # Reads response code
+        message = sys.stdin.readline()
 
-            for text in DATA:
-                fwd_file.write(text)
+        # Echos response code
+        sys.stderr.write(message)
 
+        # If response if a success, we continue
+        if is_success(message, 250):
 
-def read_input():
-    # Initializes state to look for MAIL FROM
-    current_state = "MAIL_FROM"
+            # Sends the DATA cmd
+            sys.stdout.write("DATA\n")
 
-    # Where we'll save our message information for each session
-    MAIL_FROM = ""
-    RCPT_TO = []
-    DATA = []
+            # Reads response code
+            message = sys.stdin.readline()
 
-    # Time to finally process it
-    line = sys.stdin.readline()
+            # Echos response code
+            sys.stderr.write(message)
 
-    print line.rstrip('\n')
+            # If response if a success, we continue
+            if is_success(message, 354):
+                return "data"
 
-    # If we're in the mail-from state
-    if current_state == "MAIL_FROM":
-        mail_from = check_mail_from_cmd(line)
-
-        if mail_from == 500:
-            print "500 Syntax error: command unrecognized"
-
-        elif mail_from == 503:
-            print "503 Bad sequence of commands"
-
-        elif mail_from == 501:
-            print "501 Syntax error in parameters or arguments"
-
-        else:
-            MAIL_FROM = mail_from
-            current_state = "RCPT_TO"
-            print "250 OK"
-
-    # If we're in the rcpt-to state
-    elif current_state == "RCPT_TO":
-        rcpt_to = check_rcpt_to_cmd(line)
-
-        if rcpt_to == 500:
-            print "500 Syntax error: command unrecognized"
-
-        elif rcpt_to == 503:
-
-            if RCPT_TO and check_data_cmd(line) == 354:
-                current_state = "DATA"
-                print '354 Start mail input; end with <CRLF>.<CRLF>'
-
+            # If the response is not a success, we break and QUIT
             else:
-                print "503 Bad sequence of commands"
+                return "broken"
 
-        elif rcpt_to == 501:
-            print "501 Syntax error in parameters or arguments"
-
+        # If the response is not a success, we break and QUIT
         else:
-            RCPT_TO.append(rcpt_to)
-            print "250 OK"
+            return "broken"
 
-    # If we're in the data state
-    elif current_state == "DATA":
+    elif state == "data":
+        if line[0:5] == "From:":
+
+            # Prints a . with newline to signify end of message
+            sys.stdout.write(".\n")
+
+            # Reads response code
+            message = sys.stdin.readline()
+
+            # Echos response code
+            sys.stderr.write(message)
+
+            # If response if a success, we continue
+            if is_success(message, 250):
+                return "from"
+
+            # If the response is not a success, we break and QUIT
+            else:
+                return "broken"
+        else:
+            sys.stdout.write(line)
+            return "data"
+
+
+def read_input(path):
+    # States for the state machine include: "from", "to", "subject", "data", or "break"
+    state = "from"
+
+    f = open(path, 'r')
+
+    for line in f:
+        while True:
+            state = process_line(state, line)
+            if state != "from":
+                break
+        if state == "broken":
+            break
+
+    # If we've reached the end of file in the data state, try to feed a \n.\n
+    if state == "data":
+        sys.stdout.write(".\n")
+
+        # Reads response code
+        msg = sys.stdin.readline()
+
+        # Echos response code
+        sys.stderr.write(msg)
+
+    # Regardless of whether or not the end of message file was successful, we'll print "QUIT"
+    sys.stdout.write("QUIT\n")
+
+
+def prompt_input(state, email):
+    # States for the state machine include: "from", "to", "subject", "message", or "break"
+    if state == "from":
+        sys.stdout.write("From: ")
+        mail_from_user = sys.stdin.readline().rstrip("\n")
+        mail_fr = "<" + mail_from_user + ">"
+
+        if check_reverse_path(mail_fr, 0) < 0:
+            sys.stdout.write("There was a syntax error for '%s'. Please check and re-enter the address.\n" % mail_from_user)
+            return "from"
+        else:
+            email.set_from(mail_fr)
+            return "to"
+
+    elif state == "to":
+        sys.stdout.write("To: ")
+        rcpt_to_user = sys.stdin.readline().rstrip("\n")
+        rcpt_list = rcpt_to_user.replace(' ', '').split(',')
+
+        broke = False
+
+        for r in rcpt_list:
+            r = r.rstrip()
+            rcpt_str = "<" + r + ">"
+
+            if check_reverse_path(rcpt_str, 0) < 0:
+                sys.stdout.write("There was an error in the syntax for '%s'. "
+                                 "Please check and re-enter the address.\n" % r)
+                broke = True
+            else:
+                email.add_to(rcpt_str)
+
+        if broke:
+            return "to"
+        else:
+            return "subject"
+
+    elif state == "subject":
+        sys.stdout.write("Subject: ")
+        subject = sys.stdin.readline()
+        email.set_subj(subject.rstrip())
+
+        # Start message prompt
+        sys.stdout.write("Message:\n")
+        return "message"
+
+    elif state == "message":
+        line = sys.stdin.readline()
         if line == ".\n":
-            print "250 OK"
-            process_message(MAIL_FROM, RCPT_TO, DATA)
-
-            # We reset the mail from, rcpt, and data
-            MAIL_FROM = ""
-            RCPT_TO = []
-            DATA = []
+            return "ready"
         else:
-            DATA.append(line)
+            email.add_msg(line)
+            return "message"
+
+
+# Helper class for sending mail
+class Email(object):
+    def __init__(self):
+        self.mail_from = ""
+        self.rcpt_to = []
+        self.subject = ""
+        self.msg = []
+
+    def set_from(self, s):
+        self.mail_from = s
+
+    def add_to(self, s):
+        if s not in self.rcpt_to:
+            self.rcpt_to.append(s)
+
+    def set_subj(self, s):
+        self.subject = s
+
+    def add_msg(self, s):
+        self.msg.append(s)
+
+    def get_msg(self):
+        return self.msg
 
 
 if __name__ == "__main__":
-    read_input()
+
+    state = "from"
+    email = Email()
+    # Get user input first
+    while state != "ready":
+        state = prompt_input(state, email)
+
+    for line in email.get_msg():
+        sys.stdout.write(line)
+
+    # Sets up socket interface
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Defines port number and server name to run on
+    host_name = sys.argv[1]
+    port_number = int(sys.argv[2])
+
+    server_address = (host_name, port_number)
+
+    sock.connect(server_address)
+    data = sock.recv(2048)
+    print >> sys.stderr, '%s' % data
+
+    try:
+        # Send data
+        while True:
+            message = raw_input()
+            sock.sendall(message)
+
+            data = sock.recv(2048)
+            if data:
+                print >> sys.stderr, '%s' % data
+            else:
+                print ""
+
+    finally:
+        print >> sys.stderr, 'closing socket'
+        sock.close()
