@@ -586,7 +586,7 @@ def send_data(email):
                         sock.send(d)
 
                     # End message
-                    sock.send('.\r\n')
+                    sock.send('.\n')
                     # print "Waiting for end of message ack"
                     data = sock.recv(1024)
                     # print "received: %s" % data

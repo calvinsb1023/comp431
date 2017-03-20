@@ -185,8 +185,10 @@ def check_recognized_command(s):
 
 def check_end_of_data(s):
 
-    # if len(s) == 3 and ord(s[0]) == 46 and ord(s[1]) == 13 and ord(s[2]) == 10:
-    if s == "." or s == ".\n" or s == ".\r\n":
+    if s == "." \
+            or s == ".\n" \
+            or s == ".\r\n" \
+            or s[-3:] == "\n.\n":
         return True
 
 
@@ -459,6 +461,12 @@ def read_input(con):
 
         # If we're in the data state
         elif current_state == "DATA":
+            # str_arr = line.split('\n')
+
+            for c in line:
+                print ord(c)
+
+            print "in data: %s" % line
             #sys.stdout.write(line + ' ' + '%d\n' % len(line))
             if check_end_of_data(line):
                 # print "should be ending"
@@ -475,7 +483,7 @@ if __name__ == "__main__":
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Defines port number and server name to run on
-    host_name = 'localhost'
+    host_name = 'snapper.cs.unc.edu'
     port_number = int(sys.argv[1])
     greeting_msg = "220 %s\n" % host_name
 
@@ -549,6 +557,8 @@ if __name__ == "__main__":
 
                 elif state == "process":
                     read_input(connection)
+                    state = "listen"
+                    break
 
                 else:
                     #print >> sys.stderr, 'sending data back to the client'
