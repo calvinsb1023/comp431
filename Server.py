@@ -6,7 +6,6 @@ import sys
 
 # Checks the "MAIL FROM:" command
 def check_mail_from_cmd(s):
-    sys.stdout.write(s)
 
     # Checks that it's of type MAIL FROM
     pos = check_mail_from(s)
@@ -148,12 +147,15 @@ def check_data_cmd(s):
     # Advances through additional whitespace
     pos = advance_whitespace(s, pos)
     if pos == -1:
+        print "whitespace error"
         return 501  # 501 Syntax error in parameters or arguments
 
     # Checks if there's a new line character
     try:
         if check_crlf(s[pos]) == 0:
-            return 501  # 501 Syntax error in parameters or arguments
+            #print "no newline error"
+            s += '\n'
+            return 354  # 501 Syntax error in parameters or arguments
     except IndexError:
         return 501  # 501 Syntax error in parameters or arguments
 
@@ -179,6 +181,13 @@ def check_recognized_command(s):
     if check_mail_from(s) < 0 and check_rcpt_to(s) < 0 and check_data(s) < 0 and check_helo(s):
         return 500  # 500 Syntax error: command unrecognized
     return 503  # 503 Bad sequence of commands (potential)
+
+
+def check_end_of_data(s):
+
+    # if len(s) == 3 and ord(s[0]) == 46 and ord(s[1]) == 13 and ord(s[2]) == 10:
+    if s == "." or s == ".\n" or s == ".\r\n":
+        return True
 
 
 def get_command_type(s):
@@ -360,12 +369,13 @@ def check_crlf(c):
 def process_message(MAIL_FROM, RCPT_TO, DATA):
     for receiver in RCPT_TO:
         direct = "forward/"
+        domain = receiver.split('@')[1]
 
         # Create the 'forward directory' if it doesn't exist
         if not os.path.exists(direct):
             os.makedirs(direct)
 
-        direct += receiver
+        direct += domain
         if os.path.exists(direct):
             append_write = 'a'  # append if the file exists
         else:
@@ -385,7 +395,7 @@ def process_message(MAIL_FROM, RCPT_TO, DATA):
 
 
 def send_data(con, s):
-    con.sendall(s)
+    con.send(s)
 
 
 def read_input(con):
@@ -399,17 +409,11 @@ def read_input(con):
 
     while True:
         # Time to finally process it
-        line = con.recv(2048)
+        line = con.recv(1024)
 
-        print line
-
-        if line == "QUIT" or line == "QUIT\n":
+        if line == "QUIT\r\n" or line == "QUIT\n" or line == "QUIT":
+            con.close()
             break
-
-        # Will try to fix some client input
-        if line[-2:] != '\n':
-            print "adding newline"
-            line += '\n'
 
         # If we're in the mail-from state
         if current_state == "MAIL_FROM":
@@ -439,12 +443,12 @@ def read_input(con):
 
             elif rcpt_to == 503:
 
-                if RCPT_TO and check_data_cmd(line) == 354:
+                if check_data_cmd(line) == 354:
                     current_state = "DATA"
                     send_data(con, '354 Start mail input; end with <CRLF>.<CRLF>\n')
 
                 else:
-                    send_data(con, "503 Bad sequence of commands\n")
+                    send_data(con, "503 Bad sequence of commands (but inside rcpt_to) %d\n" % check_data_cmd(line))
 
             elif rcpt_to == 501:
                 send_data(con, "501 Syntax error in parameters or arguments\n")
@@ -455,16 +459,13 @@ def read_input(con):
 
         # If we're in the data state
         elif current_state == "DATA":
-            if line == ".\n" or line == ".":
+            #sys.stdout.write(line + ' ' + '%d\n' % len(line))
+            if check_end_of_data(line):
+                # print "should be ending"
                 send_data(con, "250 OK msg end\n")
+                current_state = "MAIL_FROM"
                 process_message(MAIL_FROM, RCPT_TO, DATA)
-
-                # We reset the mail from, rcpt, and data
-                MAIL_FROM = ""
-                RCPT_TO = []
-                DATA = []
             else:
-                send_data(con, "")
                 DATA.append(line)
 
 
@@ -482,6 +483,7 @@ if __name__ == "__main__":
     port_bound = False
     client_name = ''
     while port_bound is not True:
+        #server_address = (host_name, port_number)
         server_address = (host_name, port_number)
         try:
             sock.bind(server_address)
@@ -503,41 +505,47 @@ if __name__ == "__main__":
         connection, client_address = sock.accept()
 
         print >> sys.stderr, 'Connection from', client_address
-        connection.sendall("220 %s\n" % host_name)
+        connection.send("220 %s\n" % host_name)
 
         try:
             while True:
 
                 # If we're in the connected state, we want to see a valid HELO command
                 if state == "connected":
-                    data = connection.recv(2048)
+                    data = connection.recv(1024)
+
+                    #sys.stdout.write(data)
+
+                    if data == "QUIT\r\n" or data == "QUIT\n" or data == "QUIT":
+                        state = "listening"
+                        connection.close()
 
                     if check_helo(data) > 0:
                         # Splits expected HELO command into command and then domain
                         words = data.split()
                         if len(words) < 2:
                             msg = "501 HELO requires valid domain name\n"
-                            connection.sendall(msg)
+                            connection.send(msg)
                         else:
                             dom_code = check_domain(words[1], 0)
                             if dom_code < 0:
                                 msg = "501 HELO requires valid domain name\n"
-                                connection.sendall(msg)
+                                connection.send(msg)
                             else:
                                 client_name = words[1]
                                 msg = "250 Hello, %s, pleased to meet you.\n" % client_name
                                 state = "process"
-                                connection.sendall(msg)
+                                connection.send(msg)
 
                     else:
                         code = check_recognized_command(data)
                         if code == 500:
                             msg = "500 Syntax error: command unrecognized\n"
-                            connection.sendall(msg)
+                            connection.send(msg)
 
                         elif code == 503:
                             msg = "503 Bad sequence of commands\n"
-                            connection.sendall(msg)
+                            connection.send(msg)
 
                 elif state == "process":
                     read_input(connection)
@@ -548,8 +556,8 @@ if __name__ == "__main__":
                     print >> sys.stderr, 'no more data from', client_address
                     break
         except socket.error:
-            sys.stdout.write("Something went wrong...")
-        finally:
-            # Clean up the connection
-            connection.close()
+            sys.stdout.write("Some sort of socket error happened...")
+
+        # Clean up the connection
+        connection.close()
 

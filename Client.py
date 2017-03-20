@@ -495,7 +495,7 @@ def prompt_input(state, email):
                                  "Please check and re-enter the address.\n" % r)
                 broke = True
             else:
-                email.add_to(rcpt_str)
+                email.add_rcpt(rcpt_str)
 
         if broke:
             return "to"
@@ -520,6 +520,105 @@ def prompt_input(state, email):
             return "message"
 
 
+def send_data(email):
+
+    # print "starting to send data"
+    # Sets up socket interface
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Defines port number and server name to run on
+    host_name = sys.argv[1]
+    port_number = int(sys.argv[2])
+
+    server_address = (host_name, port_number)
+
+    # print "Waiting for connection"
+    # Should be a 220 with server
+    sock.connect(server_address)
+    data = sock.recv(1024)
+    # print data
+
+    if is_success(data, 220):
+
+        # Sends the HELO greeting
+        helo = "HELO %s\n" % client_domain
+        sock.send(helo)
+        # print "Waiting for HELO ack"
+        data = sock.recv(1024)
+        # print "received: %s" % data
+
+        if is_success(data, 250):
+            msg = "MAIL FROM: " + email.get_from() + "\n"
+            # print(msg)
+            sock.sendall(msg)
+            # print "Waiting for mail from ack"
+            data = sock.recv(1024)
+            # print "received: %s" % data
+
+            if is_success(data, 250):
+                for rcpt in email.get_rcpts():
+                    msg = "RCPT TO: " + rcpt + "\n"
+                    # print(msg)
+                    sock.sendall(msg)
+                    # print "Waiting for rcpt to ack"
+                    data = sock.recv(1024)
+                    # print "received: %s" % data
+
+                    if not is_success(data, 250):
+                        sys.stdout.write("There was a problem with RCPT TO: command - %s" % msg)
+                        sock.close()
+
+                msg = "DATA\n"
+                sock.sendall(msg)
+                # print msg
+                data = sock.recv(1024)
+                # print "received: %s" % data
+
+                if is_success(data, 354):
+
+                    # Write the Subject info
+                    sock.send("Subject: " + email.get_subject() + "\n\n")
+
+                    # Write the lines
+                    for d in email.get_msg():
+                        # print d
+                        # print "sending: %s" % d
+                        sock.send(d)
+
+                    # End message
+                    sock.send('.\r\n')
+                    # print "Waiting for end of message ack"
+                    data = sock.recv(1024)
+                    # print "received: %s" % data
+                    sock.send("QUIT")
+
+                    if not is_success(data, 250):
+                        sys.stdout.write("There was a problem sending the message data")
+                        sock.close()
+                        return -1
+                    else:
+                        # print "msg sent"
+                        return 1
+
+                else:
+                    sys.stdout.write("There was a problem with DATA command")
+                    sock.close()
+                    return -1
+
+            else:
+                sys.stdout.write("There was a fatal problem with MAIL FROM: command - %s" % msg)
+                sock.close()
+                return -1
+        else:
+            sys.stdout.write("There was a fatal problem finalizing contact with the server.")
+            sock.close()
+            return -1
+    else:
+        sys.stdout.write("There was a fatal problem initializing contact with the server.")
+        sock.close()
+    return -1
+
+
 # Helper class for sending mail
 class Email(object):
     def __init__(self):
@@ -531,12 +630,21 @@ class Email(object):
     def set_from(self, s):
         self.mail_from = s
 
-    def add_to(self, s):
+    def get_from(self):
+        return self.mail_from
+
+    def add_rcpt(self, s):
         if s not in self.rcpt_to:
             self.rcpt_to.append(s)
 
+    def get_rcpts(self):
+        return self.rcpt_to
+
     def set_subj(self, s):
         self.subject = s
+
+    def get_subject(self):
+        return self.subject
 
     def add_msg(self, s):
         self.msg.append(s)
@@ -548,41 +656,11 @@ class Email(object):
 if __name__ == "__main__":
 
     state = "from"
+    client_domain = "classroom.cs.unc.edu"
     email = Email()
     # Get user input first
     while state != "ready":
         state = prompt_input(state, email)
 
-#    for line in email.get_msg():
-#        sys.stdout.write(line)
-
-    # Sets up socket interface
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    # Defines port number and server name to run on
-    host_name = sys.argv[1]
-    port_number = int(sys.argv[2])
-
-    server_address = (host_name, port_number)
-
-    sock.connect(server_address)
-    data = sock.recv(2048)
-
-    sys.stdout.write(data)
-    # print >> sys.stderr, '%s' % data
-
-    try:
-        # Send data
-        while True:
-            message = raw_input()
-            sock.sendall(message)
-
-            data = sock.recv(2048)
-            if data:
-                print >> sys.stderr, '%s' % data
-            else:
-                print ""
-
-    finally:
-        print >> sys.stderr, 'closing socket'
-        sock.close()
+    # print "made it out"
+    send_data(email)
