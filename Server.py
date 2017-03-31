@@ -147,13 +147,13 @@ def check_data_cmd(s):
     # Advances through additional whitespace
     pos = advance_whitespace(s, pos)
     if pos == -1:
-        print "whitespace error"
+        # print "whitespace error"
         return 501  # 501 Syntax error in parameters or arguments
 
     # Checks if there's a new line character
     try:
         if check_crlf(s[pos]) == 0:
-            #print "no newline error"
+            # print "no newline error"
             s += '\n'
             return 354  # 501 Syntax error in parameters or arguments
     except IndexError:
@@ -188,7 +188,7 @@ def check_end_of_data(s):
     if s == "." \
             or s == ".\n" \
             or s == ".\r\n" \
-            or s[-3:] == "\n.\n":
+            or "\n.\n" in s:
         return True
 
 
@@ -277,7 +277,7 @@ def check_element(s, pos):
 
 
 def check_name(s, pos):
-    #print "Checking name... %s" % s
+    # print "Checking name... %s" % s
     try:
         if check_a(s[pos]) == 1 and check_let_dig(s[pos+1]) == 1:
             # print "Name checked a and let dig, pos: %d" % pos
@@ -463,13 +463,22 @@ def read_input(con):
         elif current_state == "DATA":
             # str_arr = line.split('\n')
 
-            for c in line:
-                print ord(c)
+            # for c in line:
+            #    print ord(c)
 
-            print "in data: %s" % line
-            #sys.stdout.write(line + ' ' + '%d\n' % len(line))
+            # print "in data: %s" % line
+            # sys.stdout.write(line + ' ' + '%d\n' % len(line))
+
             if check_end_of_data(line):
                 # print "should be ending"
+                if len(line) > 3:
+                    str_arr = line.split('\n')
+                    for substr in str_arr:
+                        if substr.rstrip().lstrip() != '.':
+                            DATA.append(substr.rstrip('\n') + '\n')
+                        else:
+                            break
+
                 send_data(con, "250 OK msg end\n")
                 current_state = "MAIL_FROM"
                 process_message(MAIL_FROM, RCPT_TO, DATA)
@@ -483,7 +492,8 @@ if __name__ == "__main__":
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Defines port number and server name to run on
-    host_name = 'snapper.cs.unc.edu'
+    # host_name = 'classroom.cs.unc.edu'
+    host_name = 'localhost'
     port_number = int(sys.argv[1])
     greeting_msg = "220 %s\n" % host_name
 
@@ -491,28 +501,27 @@ if __name__ == "__main__":
     port_bound = False
     client_name = ''
     while port_bound is not True:
-        #server_address = (host_name, port_number)
         server_address = (host_name, port_number)
         try:
             sock.bind(server_address)
             port_bound = True
         # If the port is already busy, we'll try on the next port
         except socket.error:
-            print >> sys.stderr, "ERROR: Failed to bind to http://%s:%d/\nNow attempting http://%s:%d/" \
-                                 % (host_name, port_number, host_name, (port_number + 1) % 65535)
+            new_port = (port_number + 1) % 65535
+            sys.stdout.write("\nERROR: Failed to bind to http://%s:%d/\nNow attempting http://%s:%d/" % (host_name, port_number, host_name, new_port))
             port_number = (port_number + 1) % 65535
 
     while True:
         # States will be listen, connected, receiving
         sock.listen(1)
         state = "listen"
-        print >> sys.stderr, "Server waiting on http://%s:%d/..." % (host_name, port_number)
+        # print >> sys.stderr, "Server waiting on http://%s:%d/..." % (host_name, port_number)
 
         # Once connected, change state to connected
         state = "connected"
         connection, client_address = sock.accept()
 
-        print >> sys.stderr, 'Connection from', client_address
+        # print >> sys.stderr, 'Connection from', client_address
         connection.send("220 %s\n" % host_name)
 
         try:
@@ -561,9 +570,9 @@ if __name__ == "__main__":
                     break
 
                 else:
-                    #print >> sys.stderr, 'sending data back to the client'
-                    #connection.sendall("HELO")
-                    print >> sys.stderr, 'no more data from', client_address
+                    # print >> sys.stderr, 'sending data back to the client'
+                    # connection.sendall("HELO")
+                    # print >> sys.stderr, 'no more data from', client_address
                     break
         except socket.error:
             sys.stdout.write("Some sort of socket error happened...")

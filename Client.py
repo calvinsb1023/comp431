@@ -656,7 +656,7 @@ class Email(object):
 if __name__ == "__main__":
 
     state = "from"
-    client_domain = "classroom.cs.unc.edu"
+    client_domain = "cs.unc.edu"
     email = Email()
     # Get user input first
     while state != "ready":
